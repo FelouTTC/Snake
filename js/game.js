@@ -81,7 +81,7 @@ function eatTail(head, arr) {
 function drawGame() {
   Snakee.createField();
   ctx.drawImage(foodImg, Snakee.food.x, Snakee.food.y, Snakee.box, Snakee.box);
-  ctx.drawImage(foodImg, Snakee.box * 1, Snakee.box * 2);
+  ctx.drawImage(foodImg, Snakee.box * 1, Snakee.box * 2, Snakee.box * 2, Snakee.box * 2);
 
   for (let i = 0; i < Snakee.snake.length; i++) {
     vb = i == 0 ? zalup : stvol;
