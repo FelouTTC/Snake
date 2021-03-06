@@ -4,6 +4,12 @@ const ctx = canvas.getContext("2d");
 const foodImg = new Image();
 foodImg.src = "img/food.png";
 
+const zalup = new Image();
+zalup.src = "img/zalup.jpg"
+
+const stvol = new Image();
+stvol.src = "img/stvol.jpg"
+
 class SnakeS {
   constructor() {
     this.box = 20;
@@ -78,8 +84,8 @@ function drawGame() {
   ctx.drawImage(foodImg, Snakee.box * 1, Snakee.box * 2);
 
   for (let i = 0; i < Snakee.snake.length; i++) {
-    ctx.fillStyle = i == 0 ? "blue" : "red";
-    ctx.fillRect(Snakee.snake[i].x, Snakee.snake[i].y, Snakee.box, Snakee.box);
+    vb = i == 0 ? zalup : stvol;
+    ctx.drawImage(vb, Snakee.snake[i].x, Snakee.snake[i].y, Snakee.box, Snakee.box);
     ctx.stroke();
   }
 
@@ -127,4 +133,4 @@ function drawGame() {
   Snakee.snake.unshift(newHead);
 }
 
-let game = setInterval(drawGame, 20);
+let game = setInterval(drawGame, 60);
